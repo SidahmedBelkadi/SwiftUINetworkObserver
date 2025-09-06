@@ -50,9 +50,11 @@ struct NoInternetView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            Image(systemName: connectionType == .wifi ? "wifi.exclamationmark" : "antenna.radiowaves.left.and.right.slash")
+            Image(systemName: "wifi.exclamationmark")
                 .font(.system(size: 89, weight: .semibold ))
                 .frame(height: 80)
+                .symbolEffect(.variableColor)
+                
             
             Text("No Internet Connectivity")
                 .font(.title3)
