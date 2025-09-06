@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct SwiftUINetworkObserverApp: App {
+    
+    @StateObject private var networkMonitor = NetworkMonitor()
+        
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.isNetworkConnected, networkMonitor.isConnected)
+                .environment(\.connectionTye, networkMonitor.connectionType)
         }
     }
 }
